@@ -7,54 +7,56 @@ function App() {
       <header className="bg-transparent shadow fixed top-0 left-0 w-full z-50">
         <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
           <img src="src\assets\logo-navbar.png" alt="Logo SmartAgri" className="h-10" />
-          <nav className="hidden md:flex items-center gap-6 text-sm font-semibold">
-            <a href="#" className="hover:text-green-600">Quem Somos</a>
-            <a href="#" className="hover:text-green-600">Soluções</a>
-            <a href="#" className="hover:text-green-600">SmartPlatform</a>
-            <a href="#" className="hover:text-green-600">Segmentos</a>
-            <a href="#" className="hover:text-green-600">Produtos</a>
-            <a href="#" className="hover:text-green-600">Parcerias</a>
-            <a href="#" className="hover:text-green-600">Cases</a>
-            <a href="#" className="hover:text-green-600">Contato</a>
+          <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
+            <span><a href="#" className="hover:text-green-600">Quem Somos</a></span>
+            <span><a href="#" className="hover:text-green-600">Soluções</a></span>
+            <span><a href="#" className="hover:text-green-600">SmartPlatform</a></span>
+            <span><a href="#" className="hover:text-green-600">Segmentos</a></span>
+            <span><a href="#" className="hover:text-green-600">Produtos</a></span>
+            <span><a href="#" className="hover:text-green-600">Parcerias</a></span>
+            <span><a href="#" className="hover:text-green-600">Cases</a></span>
+            <span><a href="#" className="hover:text-green-600">Contato</a></span>
           </nav>
-          <button className="hidden md:block bg-black text-white px-4 py-2 rounded-full text-xs hover:bg-green-700 transition">
-            Ir para o SmartPlatform
+          <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-green-600 transition">
+            Ir para a SmartPlatform
           </button>
         </div>
       </header>
 
-      <div className="relative"> {/* Offset for fixed navbar */}
-        {/* Hero Section */}
+      <div className="relative"> 
+
        <section className="relative h-[1500px] flex justify-center text-white overflow-hidden">
-  {/* Imagem de fundo atrás de tudo */}
+
   <img
     src="src/assets/bg-img.png"
     alt=""
     className="absolute top-0 left-0 w-full h-full object-cover z-0"
   />
-  {/* Conteúdo acima da imagem */}
+
   <div className="relative z-10 text-center mt-32">
-    <h1 className="text-4xl md:text-6xl font-bold">
-      Soluções inovadoras<br />para o agronegócio
+    <h1 className="text-4xl md:text-6xl md:max-w-2xl font-bold mx-4">
+      Soluções inovadoras para o agronegócio
     </h1>
-    <div className="mt-6 flex justify-center gap-4">
-      <button className="bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-200 transition">
-        Conheça nossas soluções
-      </button>
-      <button className="bg-transparent border border-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-white hover:text-black transition">
-        Visitar a SmartPlatform
-      </button>
+    <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
+          <button className=" flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-transparent text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-green-600 transition">
+            Conheça nossas soluções
+            <img src="src\assets\arrow-down-hero.png" alt="" />
+          </button>
+          <button className="flex items-center gap-3 md:mt-6 bg-white text-black px-4 py-2 rounded-lg text-md font-semibold hover:bg-green-600 transition">
+            Visitar a SmartPlatform
+            <img src="src\assets\arrow-up-hero.png" alt="" />
+          </button>
     </div>
 
-    {/* Mockup do notebook */}
     <div className="absolute bottom-[-150px] w-full flex justify-center">
       <img src="/path/to/laptop-mockup.png" alt="Laptop" className="w-[800px] max-w-full" />
     </div>
   </div>
 </section>
-    {/* Tecnologia para plantar resultados */}
       <section className="px-6 md:px-20 py-20">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">Tecnologia para plantar resultados.</h2>
+        <div>
+          <h2 className="uppercase roboto-condensed text-green-600">Conheça nossas soluções</h2>
+          <h2 className="text-3xl md:text-6xl font-bold mb-4">Tecnologia para plantar resultados.</h2></div>
         <div className="grid md:grid-cols-3 gap-8 mt-10">
           {[
             { title: 'SmartPlatform', desc: 'Gestão centralizada e intuitiva.', color: 'bg-gray-300' },
