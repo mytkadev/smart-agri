@@ -6,7 +6,7 @@ function App() {
       {/* Navbar */}
       <header className="bg-transparent shadow fixed top-0 left-0 w-full z-50">
         <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
-          <img src="src\assets\logo-navbar.png" alt="Logo SmartAgri" className="h-10" />
+          <img src="src\assets\logo-navbar.png" alt="Logo SmartAgri" className="h-10 mr-2" />
           <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
             <span><a href="#" className="hover:text-green-600">Quem Somos</a></span>
             <span><a href="#" className="hover:text-green-600">Soluções</a></span>
@@ -32,6 +32,7 @@ function App() {
     alt=""
     className="absolute top-0 left-0 w-full h-full object-cover z-0"
   />
+  
 
   <div className="relative z-10 text-center mt-32">
     <h1 className="text-4xl md:text-6xl md:max-w-2xl font-bold mx-4">
@@ -52,25 +53,44 @@ function App() {
       <img src="/path/to/laptop-mockup.png" alt="Laptop" className="w-[800px] max-w-full" />
     </div>
   </div>
+
 </section>
       <section className="px-6 md:px-20 py-20">
+        <div className="flex flex-col md:flex-row justify-between"> 
+              <div className="max-w-[800px]">        
+                <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Sobre a SmartAgri</h2>
+                <h2 className="text-3xl md:text-6xl font-bold mb-4">Onde a tecnologia <br />encontra o agro</h2>
+                <p className="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra magna, nec aliquet mi. Proin dictum ipsum sit amet mi tempor, non fermentum mauris ultrices. Sed lacinia accumsan enim, eu placerat lectus pellentesque eget. Fusce vel rhoncus tortor, et bibendum sapien. Aenean nec urna commodo, iaculis tortor ac, egestas quam. Praesent leo dui, convallis vitae dapibus et, euismod nec nibh. Vivamus porttitor, erat ac scelerisque consectetur, nulla tellus luctus dolor, et imperdiet nulla lectus at ante.
+                <br />
+                <br />
+                Aenean ultricies finibus diam, ut ultrices est scelerisque ut. In tempus bibendum mi tincidunt feugiat. Maecenas id nisi congue, scelerisque ante vel, hendrerit massa. In sed laoreet ligula. Phasellus quis sagittis velit. Ut consectetur ipsum libero, sed dictum risus malesuada eget. Quisque mollis arcu odio, ac rhoncus mauris ullamcorper id. Donec pharetra urna ac vestibulum feugiat.
+                <br />
+                <br />
+                Ut lobortis leo sit amet orci bibendum, vel sagittis ante sollicitudin. Integer ante ipsum, condimentum eget ante tempus, porttitor vulputate lorem. Quisque feugiat orci sem, ac tincidunt leo molestie et. Nunc ante nunc, efficitur vel turpis at, malesuada egestas lectus. Mauris luctus tempor nisi eget sodales.
+                </p>
+                </div>
+                <img src="src\assets\Rectangle.png" alt="" className=""/>
+                </div> 
+        </section>
+      <section className="px-6 md:px-20 py-20">
         <div>
-          <h2 className="uppercase roboto-condensed text-green-600">Conheça nossas soluções</h2>
+          <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Conheça nossas soluções</h2>
           <h2 className="text-3xl md:text-6xl font-bold mb-4">Tecnologia para plantar resultados.</h2></div>
-        <div className="grid md:grid-cols-3 gap-8 mt-10">
+        <div className="grid md:grid-cols-3 gap-8 mt-10 w-[1100px] h-[400px]">
           {[
             { title: 'SmartPlatform', desc: 'Gestão centralizada e intuitiva.', color: 'bg-gray-300' },
             { title: 'Gestão do agronegócio', desc: 'Visão ampla e gestão eficiente.', color: 'bg-gray-300' },
             { title: 'Projetos customizados', desc: 'Tecnologia sob medida.', color: 'bg-gray-300' }
           ].map((item, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl overflow-hidden">
+            <div key={i} className="bg-gray-100 rounded-xl overflow-hidden ">
               <div className={`h-48 ${item.color}`} />
               <div className="p-4">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-sm text-gray-700">{item.desc}</p>
               </div>
             </div>
-          ))}
+          ))}  git config --global user.email "mytkalol@gmail.com"
+  git config --global user.name "mytkadev"
         </div>
       </section>
 
