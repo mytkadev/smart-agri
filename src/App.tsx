@@ -1,4 +1,61 @@
+import { useEffect, useState } from "react";
+import firstCard from './assets/first-card.png';
+import scrollRight from './assets/scroll-right.png';
+import scrollLeft from './assets/scroll-left.png';
+
+// Hook para acompanhar a largura da janela
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+}
+
+const cards = [
+  { title: 'SmartPlatform', desc: 'Gestão centralizada e intuitiva.', img: firstCard },
+  { title: 'Gestão do agronegócio', desc: 'Visão ampla e gestão eficiente.' },
+  { title: 'Projetos customizados', desc: 'Tecnologia sob medida.' },
+  { title: 'IoT, Sensoriamento e Automação', desc: 'Proin eu pellentesque justo. Vestibulum dui turpis.', img: firstCard },
+  { title: 'Visão computacional', desc: 'Proin eu pellentesque justo. Vestibulum dui turpis.' },
+  { title: 'Geoprocessamento e Imagens', desc: 'Drone e satélite' }
+];
+
 function App() {
+  const width = useWindowWidth();
+  const [startIndex, setStartIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    if (width < 930) {
+      setVisibleCount(1);
+    } else if (width < 1250) {
+      setVisibleCount(2);
+    } else if (width < 1550) {
+      setVisibleCount(3);
+    } else if (width < 1900) {
+      setVisibleCount(4);
+    } else {
+      setVisibleCount(5);
+    }
+  }, [width]);
+
+  const next = () => {
+    setStartIndex((prev) => (prev + 1) % cards.length);
+  };
+
+  const prev = () => {
+    setStartIndex((prev) => (prev - 1 + cards.length) % cards.length);
+  };
+
+  const visibleCards = Array.from({ length: visibleCount }).map((_, i) => {
+    const index = (startIndex + i) % cards.length;
+    return cards[index];
+  });
 
   return (
     <>
@@ -56,7 +113,7 @@ function App() {
 
 </section>
       <section className="px-6 md:px-20 py-20">
-        <div className="flex flex-col md:flex-row justify-between"> 
+        <div className="flex flex-col lg:flex-row justify-between"> 
               <div className="max-w-[800px]">        
                 <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Sobre a SmartAgri</h2>
                 <h2 className="text-3xl md:text-6xl font-bold mb-4">Onde a tecnologia <br />encontra o agro</h2>
@@ -72,45 +129,77 @@ function App() {
                 <img src="src\assets\Rectangle.png" alt="" className=""/>
                 </div> 
         </section>
-      <section className="px-6 md:px-20 py-20">
-        <div>
-          <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Conheça nossas soluções</h2>
-          <h2 className="text-3xl md:text-6xl font-bold mb-4">Tecnologia para plantar resultados.</h2></div>
-        <div className="grid md:grid-cols-3 gap-8 mt-10 w-[1100px] h-[400px]">
-          {[
-            { title: 'SmartPlatform', desc: 'Gestão centralizada e intuitiva.', color: 'bg-gray-300' },
-            { title: 'Gestão do agronegócio', desc: 'Visão ampla e gestão eficiente.', color: 'bg-gray-300' },
-            { title: 'Projetos customizados', desc: 'Tecnologia sob medida.', color: 'bg-gray-300' }
-          ].map((item, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl overflow-hidden ">
-              <div className={`h-48 ${item.color}`} />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-700">{item.desc}</p>
-              </div>
-            </div>
-          ))}  git config --global user.email "mytkalol@gmail.com"
-  git config --global user.name "mytkadev"
-        </div>
-      </section>
+<section className="px-6 md:px-20 py-20">
+  <div>
+    <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">
+      Conheça nossas soluções
+    </h2>
+    <h2 className="text-3xl md:text-6xl font-bold mb-4">
+      Tecnologia para plantar resultados.
+    </h2>
+  </div>
 
-      {/* Ferramentas que transformam a agricultura */}
-      <section className="px-6 md:px-20 py-20 bg-gray-50">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Ferramentas que transformam a agricultura</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="bg-gray-200 h-96 w-full" />
-          <div>
-            <p className="uppercase text-sm text-green-600 font-semibold mb-1">SmartPlatform</p>
-            <h3 className="text-2xl font-bold mb-2">Tenha controle de tudo em <span className="italic font-medium text-green-600">uma única plataforma</span></h3>
-            <p className="text-gray-700 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <div className="grid grid-cols-2 gap-2 text-sm text-white">
-              {['Smarttalents', 'Smartbi', 'Smarttools', 'Smartmaps', 'Smartprocess', 'Smartmetrics'].map((tool, i) => (
-                <span key={i} className="bg-black px-3 py-1 rounded">{tool}</span>
-              ))}
-            </div>
+<div className="relative mt-10">
+  {visibleCount === 1 ? (
+    <div className="flex flex-col gap-6">
+      {cards.map((item, i) => (
+        <div
+          key={i}
+          className="relative bg-gray-100 rounded-xl overflow-hidden w-full h-[300px] "
+        >
+          {item.img && (
+            <img src={item.img} alt="" className="w-full h-full object-cover " />
+          )}
+          <div className="absolute inset-0 flex flex-col justify-end p-4">
+            <h3 className="text-white text-lg font-semibold">{item.title}</h3>
+            <p className="text-white text-sm">{item.desc}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  ) : (
+    <>
+      <button
+        onClick={prev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 hidden sm:flex"
+
+      >
+        <img src={scrollLeft} alt="" className="w-5" />
+      </button>
+
+      <div className="flex gap-6 overflow-hidden justify-center">
+        {visibleCards.map((item, i) => (
+          <div
+            key={i}
+            className="relative bg-gray-100 rounded-xl overflow-hidden w-[300px] h-[400px] flex-shrink-0"
+          >
+            {item.img && (
+              <img src={item.img} alt="" className="w-full h-full object-cover" />
+            )}
+            <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/10 to-transparent">
+              <h3 className="text-white text-lg font-semibold">{item.title}</h3>
+              <p className="text-white text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button
+        onClick={next}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 hidden sm:flex"
+
+      >
+        <img src={scrollRight} alt="" className="w-5" />
+      </button>
+    </>
+  )}
+</div>
+</section>
+
+
+
+
+
 
       {/* Para cada campo, uma solução */}
       <section className="px-6 md:px-20 py-20">
