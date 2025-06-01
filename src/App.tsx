@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import firstCard from './assets/first-card.png';
 import scrollRight from './assets/scroll-right.png';
 import scrollLeft from './assets/scroll-left.png';
+import smartPlatform from './assets/smartplatform-img.png'
+import smartPlatformLogo from './assets/smartplatform-logo.png'
 
 // Hook para acompanhar a largura da janela
 function useWindowWidth() {
@@ -112,7 +114,7 @@ function App() {
   </div>
 
 </section>
-      <section className="px-6 md:px-20 py-20">
+      <section className="px-9 xl:px-30 py-20">
         <div className="flex flex-col lg:flex-row justify-between"> 
               <div className="max-w-[800px]">        
                 <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Sobre a SmartAgri</h2>
@@ -129,19 +131,21 @@ function App() {
                 <img src="src\assets\Rectangle.png" alt="" className=""/>
                 </div> 
         </section>
-<section className="px-6 md:px-20 py-20">
-  <div>
-    <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">
+<section className="px-9 xl:px-15 py-20">
+  <div className="flex flex-col xl:flex-row justify-between xl:px-15 gap-2 xl:gap-20">
+    <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">
       Conheça nossas soluções
     </h2>
-    <h2 className="text-3xl md:text-6xl font-bold mb-4">
+    <h3 className="text-3xl md:text-6xl font-bold mb-4">
       Tecnologia para plantar resultados.
-    </h2>
+    </h3></div>
+
+    <p className="xl:max-w-[650px] xl:text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra magna, nec aliquet mi. Proin dictum ipsum sit amet mi tempor, non fermentum mauris ultrices. Sed lacinia accumsan enim, eu placerat lectus pellentesque eget. Fusce vel rhoncus tortor, et bibendum sapien. Aenean nec urna commodo, iaculis tortor ac, egestas quam. Praesent leo dui, convallis vitae dapibus et, euismod nec nibh. </p>
   </div>
 
-<div className="relative mt-10">
+<div className="relative mt-10 ">
   {visibleCount === 1 ? (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 ">
       {cards.map((item, i) => (
         <div
           key={i}
@@ -167,7 +171,7 @@ function App() {
         <img src={scrollLeft} alt="" className="w-5" />
       </button>
 
-      <div className="flex gap-6 overflow-hidden justify-center">
+      <div className="flex gap-6 overflow-hidden justify-center ">
         {visibleCards.map((item, i) => (
           <div
             key={i}
@@ -195,6 +199,20 @@ function App() {
   )}
 </div>
 </section>
+<section className=" py-20">
+        <div className=" pl-9 xl:pl-30 flex flex-col justify-between max-w-[900px]">    
+                <h2 className="uppercase text-sm roboto-condensed text-green-600 max-w-700px">Nossos Produtos</h2>
+                <h2 className="text-3xl md:text-6xl font-bold ">Ferramentas que transformam a agricultura</h2>
+                </div > 
+                <div className="flex">
+                <img src={smartPlatform} alt="" className=" w-full max-w-[700px] xl:ml-[-20px]"/>
+                <div className="flex flex-col">
+                  <img src={smartPlatformLogo} alt="" />
+                  <h4>Tenha controle de tudo em <span>uma única plataforma</span></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra magna, nec aliquet mi. Proin dictum ipsum sit amet mi tempor, non fermentum mauris ultrices. Sed lacinia accumsan enim, eu placerat lectus pellentesque eget. Fusce vel rhoncus tortor, et bibendum sapien. Aenean nec urna commodo, iaculis tortor ac, egestas quam. Praesent leo dui, convallis vitae dapibus et, euismod nec nibh. Vivamus porttitor, erat ac scelerisque consectetur, nulla tellus luctus dolor, et imperdiet nulla lectus at ante.</p>
+                </div>
+                </div>
+        </section>
 
 
 
