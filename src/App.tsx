@@ -8,6 +8,7 @@ import campImg from './assets/camp-img.png'
 import mailLogo from './assets/mail-icon.png'
 import wppLogo from './assets/wpp-icon.png'
 import smartagriLogo from './assets/logo-navbar.png'
+import bgImg from './assets/bg-img.png'
 
 // Hook para acompanhar a largura da janela
 function useWindowWidth() {
@@ -95,7 +96,7 @@ useEffect(() => {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-sm bg-black/60" : "bg-transparent"}`}>
 
         <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
-          <img src="src\assets\logo-navbar.png" alt="Logo SmartAgri" className="h-10 mr-2" />
+          <img src={smartagriLogo} alt="Logo SmartAgri" className="h-10 mr-2" />
           <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
             <span><a href="#" className="hover:text-[#58A91C]">Quem Somos</a></span>
             <span><a href="#" className="hover:text-[#58A91C]">Soluções</a></span>
@@ -117,7 +118,7 @@ useEffect(() => {
        <section className="relative h-[900px] md:h-[1200px] flex justify-center text-white overflow-hidden">
 
   <img
-    src="src/assets/bg-img.png"
+    src={bgImg}
     alt=""
     className="absolute left-0 w-full h-full object-cover z-0"
   />
