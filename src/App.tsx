@@ -9,6 +9,8 @@ import mailLogo from './assets/mail-icon.png'
 import wppLogo from './assets/wpp-icon.png'
 import smartagriLogo from './assets/logo-navbar.png'
 import bgImg from './assets/bg-img.png'
+import arrowupHero from './assets/arrow-up-hero.png'
+import arrowdownHero from './assets/arrow-down-hero.png'
 
 // Hook para acompanhar a largura da janela
 function useWindowWidth() {
@@ -131,11 +133,11 @@ useEffect(() => {
     <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
           <button className=" flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-[#58A91C] transition">
             Conheça nossas soluções
-            <img src="src\assets\arrow-down-hero.png" alt="" />
+            <img src={arrowdownHero} alt="" />
           </button>
           <button className="flex items-center gap-3 md:mt-6 bg-white text-black px-4 py-2 rounded-lg text-md font-semibold hover:bg-[#58A91C] transition">
             Visitar a SmartPlatform
-            <img src="src\assets\arrow-up-hero.png" alt="" />
+            <img src={arrowupHero} alt="" />
           </button>
     </div>
 
