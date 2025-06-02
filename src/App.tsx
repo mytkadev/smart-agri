@@ -92,6 +92,23 @@ useEffect(() => {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = -80; 
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition + offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+
+    setMenuOpen(false); // fecha o menu mobile
+  }
+};
 
   return (
     <>
@@ -104,14 +121,13 @@ useEffect(() => {
 
     {/* Navegação desktop */}
     <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
-      <a href="#" className="hover:text-[#58A91C]">Quem Somos</a>
-      <a href="#" className="hover:text-[#58A91C]">Soluções</a>
-      <a href="#" className="hover:text-[#58A91C]">SmartPlatform</a>
-      <a href="#" className="hover:text-[#58A91C]">Segmentos</a>
-      <a href="#" className="hover:text-[#58A91C]">Produtos</a>
-      <a href="#" className="hover:text-[#58A91C]">Parcerias</a>
-      <a href="#" className="hover:text-[#58A91C]">Cases</a>
-      <a href="#" className="hover:text-[#58A91C]">Contato</a>
+<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C]">Quem Somos</button>
+  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C]">Soluções</button>
+  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C]">Produtos</button>
+  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C]">Segmentos</button>
+  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C]">Parcerias</button>
+  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C]">Cases</button>
+  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C]">Contato</button>
     </nav>
 
     {/* Botão Desktop */}
@@ -130,14 +146,13 @@ useEffect(() => {
   {/* Menu Mobile */}
   {menuOpen && (
     <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-black flex flex-col items-center px-6 py-4 gap-4 text-md font-medium">
-      <a href="#" className="hover:text-[#58A91C]">Quem Somos</a>
-      <a href="#" className="hover:text-[#58A91C]">Soluções</a>
-      <a href="#" className="hover:text-[#58A91C]">SmartPlatform</a>
-      <a href="#" className="hover:text-[#58A91C]">Segmentos</a>
-      <a href="#" className="hover:text-[#58A91C]">Produtos</a>
-      <a href="#" className="hover:text-[#58A91C]">Parcerias</a>
-      <a href="#" className="hover:text-[#58A91C]">Cases</a>
-      <a href="#" className="hover:text-[#58A91C]">Contato</a>
+<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C]">Quem Somos</button>
+  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C]">Soluções</button>
+  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C]">Produtos</button>
+  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C]">Segmentos</button>
+  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C]">Parcerias</button>
+  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C]">Cases</button>
+  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C]">Contato</button>
       <button className="mt-2 bg-black text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
         Ir para a SmartPlatform
       </button>
@@ -178,7 +193,7 @@ useEffect(() => {
   </div>
 
 </section>
-      <section className="px-6 xl:px-30 py-10">
+      <section className="px-6 xl:px-30 py-10" id="sobre">
         <div className="flex flex-col lg:flex-row justify-between"> 
               <div className="max-w-[800px]">        
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Sobre a SmartAgri</h2>
@@ -195,7 +210,7 @@ useEffect(() => {
                 <img src="src\assets\Rectangle.png" alt="" className=""/>
                 </div> 
         </section>
-<section className="px-6 xl:px-15 py-10">
+<section className="px-6 xl:px-15 py-10" id="solucoes">
   <div className="flex flex-col xl:flex-row justify-between xl:px-15 gap-2 xl:gap-20">
     <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">
       Conheça nossas soluções
@@ -263,7 +278,7 @@ useEffect(() => {
   )}
 </div>
 </section>
-<section className=" py-10">
+<section className=" py-10" id="produtos">
         <div className=" px-6 xl:pl-30 xl:pr-0 flex flex-col justify-between max-w-[900px]">    
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Nossos Produtos</h2>
                 <h2 className="text-3xl md:text-6xl font-bold ">Ferramentas que transformam a agricultura</h2>
@@ -289,13 +304,7 @@ useEffect(() => {
                 </div>
         </section>
 
-
-
-
-
-
-      {/* Para cada campo, uma solução */}
-      <section className="px-6 xl:px-30 py-10">
+      <section className="px-6 xl:px-30 py-10" id="campos">
                         <div className="flex bg-red flex-col xl:flex-row justify-between items-center">
         <div className="flex flex-col  justify-between xl:max-w-[900px]">    
                             <div>
@@ -322,8 +331,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra m
 
       </section>
 
-      {/* Cases */}
-      <section className="">
+      <section className="" id="cases">
         <div className=" px-6 xl:px-30 flex flex-col justify-between max-w-[900px]">    
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Cases</h2>
                 <h2 className="text-3xl md:text-6xl font-bold ">Transformações que cultivamos juntos.</h2>
@@ -346,7 +354,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra m
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#58A91C] text-white text-center py-10">
+      <footer className="bg-[#58A91C] text-white text-center py-10" id="contato">
           <div className="flex justify-between h-6 px-6 md:px-30">
             <img src={smartagriLogo} alt="" className=""/>
             <div className="flex justify-center align-center gap-2">
