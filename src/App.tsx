@@ -48,6 +48,8 @@ function App() {
   const width = useWindowWidth();
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     if (width < 930) {
@@ -95,25 +97,54 @@ useEffect(() => {
     <>
 <div className=" bg-white text-black">
       {/* Navbar */}
-      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-sm bg-black/60" : "bg-transparent"}`}>
+      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? " shadow-lg backdrop-blur-sm bg-black/60" : "bg-transparent"}`}>
+  <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
+    {/* Logo */}
+    <img src={smartagriLogo} alt="Logo SmartAgri" className="h-10 mr-2" />
 
-        <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
-          <img src={smartagriLogo} alt="Logo SmartAgri" className="h-10 mr-2" />
-          <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
-            <span><a href="#" className="hover:text-[#58A91C]">Quem Somos</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Soluções</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">SmartPlatform</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Segmentos</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Produtos</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Parcerias</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Cases</a></span>
-            <span><a href="#" className="hover:text-[#58A91C]">Contato</a></span>
-          </nav>
-          <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
-            Ir para a SmartPlatform
-          </button>
-        </div>
-      </header>
+    {/* Navegação desktop */}
+    <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
+      <a href="#" className="hover:text-[#58A91C]">Quem Somos</a>
+      <a href="#" className="hover:text-[#58A91C]">Soluções</a>
+      <a href="#" className="hover:text-[#58A91C]">SmartPlatform</a>
+      <a href="#" className="hover:text-[#58A91C]">Segmentos</a>
+      <a href="#" className="hover:text-[#58A91C]">Produtos</a>
+      <a href="#" className="hover:text-[#58A91C]">Parcerias</a>
+      <a href="#" className="hover:text-[#58A91C]">Cases</a>
+      <a href="#" className="hover:text-[#58A91C]">Contato</a>
+    </nav>
+
+    {/* Botão Desktop */}
+    <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
+      Ir para a SmartPlatform
+    </button>
+
+    {/* Botão Hamburguer Mobile */}
+    <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden z-50">
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  {/* Menu Mobile */}
+  {menuOpen && (
+    <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-black flex flex-col items-center px-6 py-4 gap-4 text-md font-medium">
+      <a href="#" className="hover:text-[#58A91C]">Quem Somos</a>
+      <a href="#" className="hover:text-[#58A91C]">Soluções</a>
+      <a href="#" className="hover:text-[#58A91C]">SmartPlatform</a>
+      <a href="#" className="hover:text-[#58A91C]">Segmentos</a>
+      <a href="#" className="hover:text-[#58A91C]">Produtos</a>
+      <a href="#" className="hover:text-[#58A91C]">Parcerias</a>
+      <a href="#" className="hover:text-[#58A91C]">Cases</a>
+      <a href="#" className="hover:text-[#58A91C]">Contato</a>
+      <button className="mt-2 bg-black text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
+        Ir para a SmartPlatform
+      </button>
+    </div>
+  )}
+</header>
+
 
       <div className="relative"> 
 
