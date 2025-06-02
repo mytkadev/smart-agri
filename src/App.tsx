@@ -350,8 +350,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra m
           <div className="flex justify-between h-6 px-6 md:px-30">
             <img src={smartagriLogo} alt="" className=""/>
             <div className="flex justify-center align-center gap-2">
-              <img src={mailLogo} alt="" />
-              <img src={wppLogo} alt="" />
+              <img src={mailLogo} alt="" className="h-3 w-3"/>
+              <img src={wppLogo} alt="" className="h-4 w-4"/>
             </div>
           </div>
           <div className="px-6 md:px-30">
