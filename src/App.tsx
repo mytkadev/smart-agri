@@ -148,14 +148,14 @@ const scrollToSection = (id: string) => {
 
   {/* Menu Mobile */}
   {menuOpen && (
-    <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-[#131313] flex flex-col items-center px-6 py-4 gap-4 text-md font-medium">
-<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C]">Quem Somos</button>
-  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C]">Soluções</button>
-  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C]">Produtos</button>
-  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C]">Segmentos</button>
-  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C]">Parcerias</button>
-  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C]">Cases</button>
-  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C]">Contato</button>
+    <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-[#131313] flex flex-col items-center py-2 text-md font-medium">
+<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C] w-full py-1.5">Quem Somos</button>
+  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C] w-full py-1.5">Soluções</button>
+  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C] w-full py-1.5">Produtos</button>
+  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C] w-full py-1.5">Segmentos</button>
+  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C] w-full py-1.5">Parcerias</button>
+  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C] w-full py-1.5">Cases</button>
+  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C] w-full py-1.5">Contato</button>
       <button className="mt-2 bg-[#131313] text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
         Ir para a SmartPlatform
       </button>
