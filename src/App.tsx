@@ -112,9 +112,9 @@ const scrollToSection = (id: string) => {
 
   return (
     <>
-<div className=" bg-white text-black" id="home">
+<div className=" bg-white text-[#131313]" id="home">
       {/* Navbar */}
-      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? " shadow-lg backdrop-blur-sm bg-black/60" : "bg-transparent"}`}>
+      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? " shadow-lg backdrop-blur-sm bg-[#131313]/60" : "bg-transparent"}`}>
   <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
     {/* Logo */}
     <button onClick={() => scrollToSection("home")} className="hover:text-[#58A91C] cursor-pointer">
@@ -134,7 +134,7 @@ const scrollToSection = (id: string) => {
     </nav>
 
     {/* Botão Desktop */}
-    <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition cursor-pointer">
+    <button className="hidden md:block bg-white text-[#131313] px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition cursor-pointer">
       Ir para a SmartPlatform
     </button>
 
@@ -148,7 +148,7 @@ const scrollToSection = (id: string) => {
 
   {/* Menu Mobile */}
   {menuOpen && (
-    <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-black flex flex-col items-center px-6 py-4 gap-4 text-md font-medium">
+    <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-[#131313] flex flex-col items-center px-6 py-4 gap-4 text-md font-medium">
 <button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C]">Quem Somos</button>
   <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C]">Soluções</button>
   <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C]">Produtos</button>
@@ -156,7 +156,7 @@ const scrollToSection = (id: string) => {
   <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C]">Parcerias</button>
   <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C]">Cases</button>
   <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C]">Contato</button>
-      <button className="mt-2 bg-black text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
+      <button className="mt-2 bg-[#131313] text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
         Ir para a SmartPlatform
       </button>
     </div>
@@ -180,11 +180,11 @@ const scrollToSection = (id: string) => {
       Soluções inovadoras para o agronegócio
     </h1>
     <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
-          <button onClick={() => scrollToSection("solucoes")} className="cursor-pointer flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-black/30 hover:backdrop-blur-md transition">
+          <button onClick={() => scrollToSection("solucoes")} className="cursor-pointer flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-[#131313]/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-[#131313]/30 hover:backdrop-blur-md transition">
             Conheça nossas soluções
             <img src={arrowdownHero} alt="" />
           </button>
-          <button className=" cursor-pointer flex items-center gap-3 md:mt-6 bg-white text-black px-4 py-2 rounded-lg text-md font-semibold hover:bg-[#d7d7d7] transition">
+          <button className=" cursor-pointer flex items-center gap-3 md:mt-6 bg-white text-[#131313] px-4 py-2 rounded-lg text-md font-semibold hover:bg-[#d7d7d7] transition">
             Visitar a SmartPlatform
             <img src={arrowupHero} alt="" />
           </button>
@@ -215,7 +215,7 @@ const scrollToSection = (id: string) => {
         </section>
 <section className="px-6 xl:px-15 py-10" id="solucoes">
   <div className="flex flex-col xl:flex-row justify-between xl:px-15 gap-2 xl:gap-20">
-    <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">
+    <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-[#232323] max-w-700px">
       Conheça nossas soluções
     </h2>
     <h3 className="text-3xl md:text-6xl font-bold mb-4">
@@ -250,19 +250,19 @@ const scrollToSection = (id: string) => {
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 hidden sm:flex"
 
       >
-        <img src={scrollLeft} alt="" className="w-5" />
+        <img src={scrollLeft} alt="" className="w-5 cursor-pointer" />
       </button>
 
       <div className="flex gap-6 overflow-hidden justify-center ">
         {visibleCards.map((item, i) => (
           <div
             key={i}
-            className="relative bg-gray-100 rounded-xl overflow-hidden w-[300px] h-[400px] flex-shrink-0"
+            className="relative bg-gray-100 rounded-xl overflow-hidden w-[280px] h-[350px] flex-shrink-0"
           >
             {item.img && (
               <img src={item.img} alt="" className="w-full h-full object-cover" />
             )}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/10 to-transparent">
+            <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-[#131313]/10 to-transparent">
               <h3 className="text-white text-lg font-semibold">{item.title}</h3>
               <p className="text-white text-sm">{item.desc}</p>
             </div>
@@ -275,7 +275,7 @@ const scrollToSection = (id: string) => {
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-4 py-2 hidden sm:flex"
 
       >
-        <img src={scrollRight} alt="" className="w-5" />
+        <img src={scrollRight} alt="" className="w-5 cursor-pointer" />
       </button>
     </>
   )}
@@ -287,17 +287,17 @@ const scrollToSection = (id: string) => {
                 <h2 className="text-3xl md:text-6xl font-bold ">Ferramentas que transformam a agricultura</h2>
                 </div > 
                 <div className="flex flex-col xl:flex-row">
-                <img src={smartPlatform} alt="" className=" w-full max-w-[900px] xl:ml-[-20px] mb-5 xl:mb-0"/>
+                <img src={smartPlatform} alt="" className=" w-full max-w-[800px] xl:ml-[-20px] mb-5 xl:mb-0"/>
                 <div className="flex flex-col px-6 mt-5 md:mt-0 xl:pr-30 align-center justify-center gap-4">
                   <div className="flex flex-col gap-2">
                     <img src={smartPlatformLogo} alt="" className="w-[120px] md:w-[200px]"/>
-                  <h4 className="text-2xl md:text-6xl font-semibold max-w-[500px]">Tenha controle de tudo em <span className=" italic font-black text-[#58A91C] ">uma única plataforma</span></h4>
+                  <h4 className="text-2xl md:text-6xl font-semibold max-w-[500px]">Tenha controle de tudo em <span className=" italic font-[#131313] text-[#58A91C] ">uma única plataforma</span></h4>
                   
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra magna, nec aliquet mi. Proin dictum ipsum sit amet mi tempor, non fermentum mauris ultrices. Sed lacinia accumsan enim, eu placerat lectus pellentesque eget. Fusce vel rhoncus tortor, et bibendum sapien. Aenean nec urna commodo, iaculis tortor ac, egestas quam. Praesent leo dui, convallis vitae dapibus et, euismod nec nibh. Vivamus porttitor, erat ac scelerisque consectetur, nulla tellus luctus dolor, et imperdiet nulla lectus at ante.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra magna, nec aliquet mi. Proin dictum ipsum sit amet mi tempor, non fermentum mauris ultrices. Sed lacinia accumsan enim, eu placerat lectus pellentesque eget. Fusce vel rhoncus tortor, et bibendum sapien. Aenean nec urna commodo, iaculis tortor ac, egestas quam. Praesent leo dui, convallis vitae dapibus et, euismod nec nibh. </p>
 <div className="grid grid-cols-2 gap-2 text-sm text-white">
   {smartplatformCards.map((item, i) => (
-    <div key={i} className="bg-black px-3 py-2 rounded flex flex-col">
+    <div key={i} className="bg-[#131313] px-3 py-2 rounded flex flex-col">
       <span className="text-md font-semibold">{item.title}</span>
       <span className="text-sm">{item.desc}</span></div>
   ))}
@@ -339,7 +339,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra m
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Cases</h2>
                 <h2 className="text-3xl md:text-6xl font-bold ">Transformações que cultivamos juntos.</h2>
                 </div > 
-        <div className="bg-black text-white mx-6 xl:mx-30 my-8 h-[300px] md:h-[500px] p-6 md:p-10 rounded-md shadow-md flex flex-col justify-between">
+        <div className="bg-[#131313] text-white mx-6 xl:mx-30 my-8 h-[300px] md:h-[500px] p-6 md:p-10 rounded-md shadow-md flex flex-col justify-between">
           <div>          <h3 className="font-bold mb-2">Título</h3>
           <p className="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p></div>
           <div className="flex justify-between items-center">
