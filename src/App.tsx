@@ -331,7 +331,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac pharetra m
 
       </section>
 
-      <section className="" id="cases">
+      <section className="py-10" id="cases">
         <div className=" px-6 xl:px-30 flex flex-col justify-between max-w-[900px]">    
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Cases</h2>
                 <h2 className="text-3xl md:text-6xl font-bold ">Transformações que cultivamos juntos.</h2>
