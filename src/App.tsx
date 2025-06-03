@@ -215,7 +215,7 @@ const scrollToSection = (id: string) => {
         </section>
 <section className="px-6 xl:px-15 py-10" id="solucoes">
   <div className="flex flex-col xl:flex-row justify-between xl:px-15 gap-2 xl:gap-20">
-    <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-[#232323] max-w-700px">
+    <div className="xl:max-w-[650px] xl:min-w-[550px]">    <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">
       Conheça nossas soluções
     </h2>
     <h3 className="text-3xl md:text-6xl font-bold mb-4">
