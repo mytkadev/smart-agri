@@ -210,7 +210,7 @@ const scrollToSection = (id: string) => {
                 Ut lobortis leo sit amet orci bibendum, vel sagittis ante sollicitudin. Integer ante ipsum, condimentum eget ante tempus, porttitor vulputate lorem. Quisque feugiat orci sem, ac tincidunt leo molestie et. Nunc ante nunc, efficitur vel turpis at, malesuada egestas lectus. Mauris luctus tempor nisi eget sodales.
                 </p>
                 </div>
-                <img src="src\assets\Rectangle.png" alt="" className=""/>
+                <img src="src\assets\Rectangle.png" alt="" className="max-w-[550px]"/>
                 </div> 
         </section>
 <section className="px-6 xl:px-15 py-10" id="solucoes">
