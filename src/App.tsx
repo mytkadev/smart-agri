@@ -149,13 +149,13 @@ const scrollToSection = (id: string) => {
   {/* Menu Mobile */}
   {menuOpen && (
     <div className="md:hidden absolute top-16 left-0 w-full shadow-md bg-white justify-center backdrop-blur-md text-[#131313] flex flex-col items-center py-2 text-md font-medium">
-<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C] w-full py-1.5">Quem Somos</button>
-  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C] w-full py-1.5">Soluções</button>
-  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C] w-full py-1.5">Produtos</button>
-  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C] w-full py-1.5">Segmentos</button>
-  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C] w-full py-1.5">Parcerias</button>
-  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C] w-full py-1.5">Cases</button>
-  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C] w-full py-1.5">Contato</button>
+<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C] w-full py-2">Quem Somos</button>
+  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C] w-full py-2">Soluções</button>
+  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C] w-full py-2">Produtos</button>
+  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C] w-full py-2">Segmentos</button>
+  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C] w-full py-2">Parcerias</button>
+  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C] w-full py-2">Cases</button>
+  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C] w-full py-2">Contato</button>
       <button className="mt-2 bg-[#131313] text-white px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
         Ir para a SmartPlatform
       </button>
