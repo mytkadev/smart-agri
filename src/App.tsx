@@ -177,7 +177,7 @@ const scrollToSection = (id: string) => {
       Soluções inovadoras para o agronegócio
     </h1>
     <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
-          <button className=" flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-[#58A91C] transition">
+          <button onClick={() => scrollToSection("solucoes")} className=" flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-[#58A91C] transition">
             Conheça nossas soluções
             <img src={arrowdownHero} alt="" />
           </button>
