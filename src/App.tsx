@@ -35,7 +35,7 @@ const cards = [
 ];
 
 const smartplatformCards = [
-{ title: 'SmartTalents', desc: 'Monitoramento e gestão de processos', icon:firstCard},
+{ title: 'SmartPlants', desc: 'Monitoramento e gestão de processos', icon:firstCard},
   { title: 'SmartBI', desc: 'Monitoramento e gestão de equipamentos', icon:firstCard },
   { title: 'SmartTools', desc: 'Monitoramento do clima',icon:firstCard },
   { title: 'SmartMaps', desc: 'Gestão de águas e irrigacão', img: firstCard },
@@ -112,26 +112,29 @@ const scrollToSection = (id: string) => {
 
   return (
     <>
-<div className=" bg-white text-black">
+<div className=" bg-white text-black" id="home">
       {/* Navbar */}
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? " shadow-lg backdrop-blur-sm bg-black/60" : "bg-transparent"}`}>
   <div className="max-w-full mx-auto px-6 md:px-20 h-16 flex items-center justify-between">
     {/* Logo */}
-    <img src={smartagriLogo} alt="Logo SmartAgri" className="h-10 mr-2" />
+    <button onClick={() => scrollToSection("home")} className="hover:text-[#58A91C] cursor-pointer">
+      <img src={smartagriLogo} alt="Logo SmartAgri" className="h-10 mr-2" />
+      </button>
+    
 
     {/* Navegação desktop */}
     <nav className="hidden md:flex items-center gap-8 text-md font-medium text-white">
-<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C]">Quem Somos</button>
-  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C]">Soluções</button>
-  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C]">Produtos</button>
-  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C]">Segmentos</button>
-  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C]">Parcerias</button>
-  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C]">Cases</button>
-  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C]">Contato</button>
+<button onClick={() => scrollToSection("sobre")} className="hover:text-[#58A91C] cursor-pointer">Quem Somos</button>
+  <button onClick={() => scrollToSection("solucoes")} className="hover:text-[#58A91C] cursor-pointer">Soluções</button>
+  <button onClick={() => scrollToSection("produtos")} className="hover:text-[#58A91C] cursor-pointer">Produtos</button>
+  <button onClick={() => scrollToSection("campos")} className="hover:text-[#58A91C] cursor-pointer">Segmentos</button>
+  <button onClick={() => scrollToSection("parcerias")} className="hover:text-[#58A91C] cursor-pointer">Parcerias</button>
+  <button onClick={() => scrollToSection("cases")} className="hover:text-[#58A91C] cursor-pointer">Cases</button>
+  <button onClick={() => scrollToSection("contato")} className="hover:text-[#58A91C] cursor-pointer">Contato</button>
     </nav>
 
     {/* Botão Desktop */}
-    <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition">
+    <button className="hidden md:block bg-white text-black px-4 py-2 rounded-sm text-md font-semibold hover:bg-[#58A91C] transition cursor-pointer">
       Ir para a SmartPlatform
     </button>
 
@@ -177,11 +180,11 @@ const scrollToSection = (id: string) => {
       Soluções inovadoras para o agronegócio
     </h1>
     <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
-          <button onClick={() => scrollToSection("solucoes")} className=" flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-[#58A91C] transition">
+          <button onClick={() => scrollToSection("solucoes")} className="cursor-pointer flex items-center gap-3 border-[1px] border-white mt-4 md:mt-6 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-lg text-md font-medium hover:bg-black/30 hover:backdrop-blur-md transition">
             Conheça nossas soluções
             <img src={arrowdownHero} alt="" />
           </button>
-          <button className="flex items-center gap-3 md:mt-6 bg-white text-black px-4 py-2 rounded-lg text-md font-semibold hover:bg-[#58A91C] transition">
+          <button className=" cursor-pointer flex items-center gap-3 md:mt-6 bg-white text-black px-4 py-2 rounded-lg text-md font-semibold hover:bg-[#d7d7d7] transition">
             Visitar a SmartPlatform
             <img src={arrowupHero} alt="" />
           </button>
@@ -194,7 +197,7 @@ const scrollToSection = (id: string) => {
 
 </section>
       <section className="px-6 xl:px-30 py-10" id="sobre">
-        <div className="flex flex-col lg:flex-row justify-between"> 
+        <div className="flex flex-col lg:flex-row justify-between gap-6"> 
               <div className="max-w-[800px]">        
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Sobre a SmartAgri</h2>
                 <h2 className="text-3xl md:text-6xl font-bold mb-4">Onde a tecnologia <br />encontra o agro</h2>
