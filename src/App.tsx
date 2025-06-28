@@ -201,20 +201,15 @@ const scrollToSection = (id: string) => {
   </div>
 
 </section>
-      <section className="px-6 xl:px-30 py-10" id="sobre">
+      <section className="px-6 xl:px-30 py-10 hidden " id="sobre" >
         <div className="flex flex-col lg:flex-row justify-between gap-6"> 
               <div className="max-w-[800px]">        
                 <h2 className="uppercase text-sm roboto-condensed text-[#58A91C] max-w-700px">Sobre a SmartAgri</h2>
                 <h2 className="text-3xl md:text-6xl font-bold mb-4">Onde a tecnologia <br />encontra o agro</h2>
                 <p>A Smart Agri é uma empresa de tecnologia que nasceu com o propósito de transformar a maneira como o agronegócio opera, levando inovação para o campo de forma acessível, inteligente e personalizada. Nosso foco está em desenvolver soluções que unam automação, sensoriamento, conectividade e gestão digital, sempre com o objetivo de tornar o dia a dia de agricultores, cooperativas e trabalhadores do setor mais eficiente, sustentável e conectado com o futuro.</p>
-Add commentMore actions
-                <p>Acreditamos que a tecnologia deve ser uma aliada prática e funcional — não um obstáculo. Por isso, criamos plataformas, sistemas e projetos que descomplicam a gestão agrícola, facilitam a tomada de decisões e aumentam a produtividade, sem perder de vista a realidade de quem está no campo. Nossas soluções são pensadas para integrar dados, processos e pessoas, colocando o controle da operação nas mãos de quem realmente precisa dele.</p>
-
-                <p>Um exemplo disso é o projeto que estamos desenvolvendo para o setor madeireiro: um sistema inteligente de corte de tábuas que automatiza o processo e reduz drasticamente o desperdício de matéria-prima. Antes, a empresa utilizava uma máquina rudimentar que exigia muito esforço manual e resultava em perda considerável de produto. Com a tecnologia Smart Agri, esse processo está sendo transformado, tornando-se mais preciso, rápido e eficiente.</p>
 
                 <p className="mb-6">Na Smart Agri, unimos inovação, experiência e sensibilidade com o campo para criar um futuro onde a tecnologia trabalha lado a lado com quem alimenta o mundo.</p>
                 </div>
-                <img src="src\assets\Rectangle.png" alt="" className="max-w-[550px]"/>
                 </div> 
         </section>
 <section className="px-6 xl:px-15 py-10" id="solucoes">
@@ -298,7 +293,7 @@ Add commentMore actions
                   <h4 className="text-2xl md:text-6xl font-semibold max-w-[500px]">Tenha controle de tudo em <span className=" italic font-[#131313] text-[#58A91C] ">uma única plataforma</span></h4>
                   
                   </div>
-                  <p>A SmartPlatform é o ecossistema digital que centraliza todas as soluções da Smart Agri em um só lugar. É por meio dela que o usuário monitora, gerencia e acompanha os principais indicadores de seus produtos, processos e equipamentos agrícolas. Com módulos como Smartplants, Smartmachines, Smartclimate, Smartwater, Smartenergy e o Smartagri MRP 4.0, é possível controlar desde a irrigação até o desempenho energético, o clima e a operação de máquinas em tempo real. A SmartPlatform transforma dados em decisões — com acessibilidade, clareza e foco em produtividade no campo.</p>
+                  <p className="lg:mb-20">A SmartPlatform é o ecossistema digital que centraliza todas as soluções da Smart Agri em um só lugar. É por meio dela que o usuário monitora, gerencia e acompanha os principais indicadores de seus produtos, processos e equipamentos agrícolas. </p>
 <div className="grid grid-cols-2 gap-2 text-sm text-white">
   {smartplatformCards.map((item, i) => (
     <div key={i} className="bg-[#131313] px-3 py-2 rounded flex flex-col">
@@ -320,11 +315,8 @@ Add commentMore actions
                 </div > 
 
 
-        <p className="text-gray-700 xl:max-w-2xl mb-6">O agronegócio é formado por diversos segmentos, cada um com suas particularidades, ritmos e desafios. Na Smart Agri, acreditamos que não existe uma solução única para todos — por isso, nossa proposta é desenvolver tecnologias sob medida para diferentes realidades do campo. Atuamos com uma visão flexível, buscando entender a fundo os processos e adaptar nossas ferramentas de forma prática, acessível e funcional.Add commentMore actions
-        Hoje, já trabalhamos com soluções voltadas para o setor madeireiro, como um sistema que automatiza o corte de tábuas com o objetivo de reduzir perdas e o esforço manual.
-        Além disso, temos projetos em fase de estudo e estruturação para outras áreas como Álcool e Açúcar, Irrigação, Arroz, Leite e Derivados, Soja e Eucalipto. Cada um desses setores está sendo analisado com atenção para que as futuras soluções desenvolvidas sejam de fato aplicáveis, eficientes e alinhadas à rotina de quem vive do campo.
-        Nosso objetivo é criar ferramentas que não apenas automatizem processos, mas que deem suporte à tomada de decisão, tornem o trabalho mais eficiente e promovam o crescimento sustentável em cada setor onde atuamos.
-        Cada campo tem sua lógica e seu jeito de produzir — e é com esse olhar que a Smart Agri constrói, passo a passo, soluções alinhadas à realidade de cada produtor e negócio rural.</p>
+        <p className="text-gray-700 xl:max-w-4xl mb-6">O agronegócio é formado por diversos segmentos, cada um com suas particularidades, ritmos e desafios. Na Smart Agri, acreditamos que não existe uma solução única para todos — por isso, nossa proposta é desenvolver tecnologias sob medida para diferentes realidades do campo. Atuamos com uma visão flexível, buscando entender a fundo os processos e adaptar nossas ferramentas de forma prática, acessível e funcional.Add commentMore actions
+        Hoje, já trabalhamos com soluções voltadas para o setor madeireiro, como um sistema que automatiza o corte de tábuas com o objetivo de reduzir perdas e o esforço manual.</p>
         <div className=" max-w-2xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
           {['Alcool e açúcar', 'Irrigação', 'Madeira', 'Arroz', 'Leite e derivados', 'Soja', 'Eucalipto'].map((segment, i) => (
             <div key={i} className="flex items-center gap-2">
